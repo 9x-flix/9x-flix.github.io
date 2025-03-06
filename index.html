@@ -3,372 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>9xflix - Hindi Dubbed Movies, Web Series, and TV Shows</title>
-    <meta name="description" content="Your go-to destination for Hindi dubbed dual audio movies, web series, and TV shows.">
-    <!-- Font Awesome for icons -->
+    <title>9xflix - Download Hindi Dubbed Movies & Web Series</title>
+    <meta name="description" content="Download and stream the latest Hindi dubbed movies, web series, and TV shows in HD quality on 9xflix.">
+    <meta name="keywords" content="9xflix, Hindi dubbed movies, Bollywood movies, dual audio movies, web series download, free movie download, latest movies">
+    <meta name="author" content="9xflix Team">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Reset and base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            min-height: 100vh;
-            background-color: #f3f4f6;
-            line-height: 1.5;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        /* Header styles */
-        header {
-            background-color: #333333;
-            padding: 1rem 0;
-        }
-
-        .logo-container {
-            display: flex;
-            justify-content: center;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            position: relative;
-            height: 64px;
-            width: 128px;
-        }
-
-        .logo-9x {
-            position: absolute;
-            left: 0;
-            top: 0;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo-9 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #3b82f6; /* blue-500 */
-        }
-
-        .logo-x {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #ec4899; /* pink-500 */
-        }
-
-        .logo-flix {
-            position: absolute;
-            right: 0;
-            top: 0;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo-f {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #22c55e; /* green-500 */
-        }
-
-        .logo-l {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #eab308; /* yellow-500 */
-        }
-
-        .logo-i {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #a855f7; /* purple-500 */
-        }
-
-        .logo-x2 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #f97316; /* orange-500 */
-        }
-
-        /* Welcome section */
-        .welcome-section {
-            padding: 1.5rem 0;
-            text-align: center;
-        }
-
-        .welcome-text {
-            font-size: 1.125rem;
-        }
-
-        /* Search bar */
-        .search-container {
-            margin: 1.5rem auto;
-            max-width: 42rem;
-            padding: 0 1rem;
-        }
-
-        .search-form {
-            position: relative;
-            border: 2px solid #9ca3af; /* gray-400 */
-            border-radius: 9999px;
-            background-color: #1f2937; /* gray-800 */
-            padding: 0.25rem;
-        }
-
-        .search-input {
-            width: 100%;
-            background-color: transparent;
-            color: white;
-            border: none;
-            border-radius: 9999px;
-            padding: 0.5rem 2.5rem 0.5rem 1rem;
-            outline: none;
-        }
-
-        .search-button {
-            position: absolute;
-            right: 0.75rem;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: #16a34a; /* green-600 */
-            color: white;
-            border: none;
-            border-radius: 9999px;
-            padding: 0.25rem;
-            cursor: pointer;
-        }
-
-        /* Home button */
-        .home-button-container {
-            display: flex;
-            justify-content: center;
-            padding: 1rem 0;
-        }
-
-        .home-button {
-            background-color: #ff0000;
-            color: white;
-            border: none;
-            border-radius: 0.375rem;
-            padding: 0.75rem 1.5rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .home-button:hover {
-            background-color: #cc0000;
-        }
-
-        /* Category buttons */
-        .category-section {
-            padding: 1.5rem 0;
-        }
-
-        .category-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .category-button {
-            background-color: #8b0000;
-            color: white;
-            border: none;
-            border-radius: 0.25rem;
-            padding: 0.5rem 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .category-button:hover {
-            background-color: #6b0000;
-        }
-
-        /* Why Choose section */
-        .why-choose-section {
-            background-color: #666666;
-            color: white;
-            padding: 2.5rem 0;
-        }
-
-        .section-title {
-            font-size: 1.875rem;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .section-intro {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-section {
-            margin-bottom: 2.5rem;
-        }
-
-        .feature-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        .feature-text {
-            text-align: center;
-        }
-
-        .feature-point {
-            margin-top: 0.5rem;
-            text-align: center;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 640px) {
-            .category-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .category-button {
-                width: 80%;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background-color: #f8f9fa; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 1rem; }
+        header { background: #212529; padding: 1rem 0; text-align: center; }
+        .logo { font-size: 2rem; font-weight: bold; color: #ff3e00; }
+        nav { display: flex; justify-content: center; gap: 1rem; padding: 1rem; }
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+        nav a:hover { color: #ff3e00; }
+        .search-container { text-align: center; margin: 1rem 0; }
+        .search-container input { width: 80%; padding: 0.5rem; border-radius: 5px; border: 1px solid #ccc; }
+        .search-container button { padding: 0.5rem; background: #ff3e00; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .categories { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 1rem 0; }
+        .categories button { background: #007bff; color: white; padding: 0.75rem; border: none; border-radius: 5px; cursor: pointer; }
+        .categories button:hover { background: #0056b3; }
+        .content { padding: 1rem; text-align: center; }
+        .content h2 { margin-bottom: 1rem; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+        .feature-card { background: white; padding: 1rem; border-radius: 5px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); }
+        .about-section { padding: 2rem 0; text-align: center; background: #fff; }
+        .about-section p { max-width: 800px; margin: 0 auto; line-height: 1.6; }
+        footer { background: #212529; color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
     </style>
 </head>
 <body>
-    <main>
-        <!-- Header -->
-        <header>
-            <div class="logo-container">
-                <div class="logo">
-                    <div class="logo-9x">
-                        <div class="logo-9">9</div>
-                        <div class="logo-x">x</div>
-                    </div>
-                    <div class="logo-flix">
-                        <div class="logo-f">F</div>
-                        <div class="logo-l">L</div>
-                        <div class="logo-i">I</div>
-                        <div class="logo-x2">X</div>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- Welcome Text -->
-        <section class="welcome-section">
-            <div class="container">
-                <p class="welcome-text">
-                    Welcome to <strong>9xflix.com</strong> – your go-to destination for <strong>Hindi dubbed</strong> dual audio movies, web series, and TV shows. Enjoy the latest Bollywood films, South Indian Hindi dubbed movies, Hollywood dubbed movies, and all these in high-definition (HD) quality.
-                </p>
-            </div>
-        </section>
-
-        <!-- Search Bar -->
+    <header>
+        <div class="logo">9xflix</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Movies</a>
+            <a href="#">Web Series</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    
+    <div class="container">
         <div class="search-container">
-            <form id="searchForm" class="search-form">
-                <input 
-                    type="text" 
-                    id="searchInput" 
-                    class="search-input" 
-                    placeholder="Search for Movies or Series..."
-                >
-                <button type="submit" class="search-button">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
+            <input type="text" placeholder="Search for Movies or Series...">
+            <button><i class="fas fa-search"></i> Search</button>
         </div>
-
-        <!-- Home Button -->
-        <div class="home-button-container">
-            <button class="home-button">
-                Go to Homepage <i class="fas fa-home"></i>
-            </button>
+        
+        <div class="categories">
+            <button>Bollywood Movies</button>
+            <button>Dual Audio Movies</button>
+            <button>Hindi Dubbed Movies</button>
+            <button>Web Series</button>
         </div>
-
-        <!-- Category Buttons -->
-        <section class="category-section">
-            <div class="container">
-                <div class="category-buttons">
-                    <button class="category-button">Bollywood Movies</button>
-                    <button class="category-button">Dual Audio Movies</button>
-                    <button class="category-button">Hindi Dubbed Movies</button>
-                    <button class="category-button">Web Series</button>
+        
+        <div class="content">
+            <h2>Why Choose 9xflix?</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Wide Collection</h3>
+                    <p>Browse through thousands of movies and web series across different genres.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>High-Quality Streaming</h3>
+                    <p>Watch movies in HD, Full HD, and even 4K quality for the best experience.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Fast Downloads</h3>
+                    <p>Enjoy lightning-fast downloads with multiple resolution options.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Free & Easy Access</h3>
+                    <p>No subscriptions required – watch your favorite content anytime.</p>
                 </div>
             </div>
-        </section>
-
-        <!-- Why Choose Section -->
-        <section class="why-choose-section">
-            <div class="container">
-                <h2 class="section-title">Why Choose 9xflix.com?</h2>
-                
-                <div class="section-intro">
-                    <p>9xflix is the ultimate destination for movie lovers in the Indian subcontinent, offering a wide range of films in various languages and quality options. Whether you're looking to download the latest Bollywood hits, regional films, or international blockbusters, here's why 9xflix.com stands out as a top choice:</p>
-                </div>
-
-                <div class="feature-section">
-                    <h3 class="feature-title">1. Vast Movie Collection in Multiple Languages</h3>
-                    <p class="feature-text">
-                        9xflix.com offers an extensive library of movies across a variety of languages, making it a go-to platform for viewers from different linguistic backgrounds. You can find movies in Hindi, Punjabi, Marathi, Tamil, Telugu, Malayalam, as well as English. Additionally, the website provides a large collection of Hindi Dubbed movies and Dual Audio films for those who prefer to watch content in multiple languages with Subtitles.
-                    </p>
-                </div>
-
-                <div class="feature-section">
-                    <h3 class="feature-title">2. High-Quality Movie Downloads</h3>
-                    <p class="feature-text">
-                        At 9x flix, you get access to movies in various quality formats to suit your preferences and internet speed. Whether you want the highest resolution or a more data-friendly option, you'll find it all here:
-                    </p>
-                    <p class="feature-point">1. 1080p for an ultra-clear, cinematic experience</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <script>
-        // Search functionality
-        document.getElementById('searchForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const searchQuery = document.getElementById('searchInput').value;
-            console.log('Searching for:', searchQuery);
-            // In a real implementation, this would redirect to search results
-            alert('Searching for: ' + searchQuery);
-        });
-
-        // Home button functionality
-        document.querySelector('.home-button').addEventListener('click', function() {
-            // In a real implementation, this would redirect to the homepage
-            window.location.href = '#';
-        });
-
-        // Category button functionality
-        const categoryButtons = document.querySelectorAll('.category-button');
-        categoryButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const category = this.textContent;
-                console.log('Selected category:', category);
-                // In a real implementation, this would redirect to category page
-                alert('Selected category: ' + category);
-            });
-        });
-    </script>
+        </div>
+        
+        <div class="about-section">
+            <h2>About 9xflix</h2>
+            <p>9xflix is your one-stop destination for downloading and streaming the latest Hindi dubbed movies, web series, and TV shows. We bring you a vast collection of Bollywood, Hollywood, South Indian, and regional films in various languages. Our platform is designed to provide seamless entertainment with high-quality streaming and fast downloads. Whether you love action-packed thrillers, romantic dramas, or mind-blowing sci-fi films, we have something for everyone.</p>
+            <p>At 9xflix, we prioritize user experience by offering an ad-free and secure browsing environment. Our website is constantly updated with the latest movie releases so you never miss out on your favorite films. Explore our extensive library and enjoy premium entertainment for free.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 9xflix. All Rights Reserved.</p>
+        <p>Disclaimer: We do not host or distribute any copyrighted content.</p>
+    </footer>
 </body>
 </html>
